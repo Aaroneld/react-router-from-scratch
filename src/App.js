@@ -9,12 +9,8 @@ import CustomRoute from './route';
 
 function App(props) {
 
-  console.log(props)
-
   return (
     <div className="App">
-
-      {/* <CustomRoute path="/" component={Home} /> */}
       
       <CustomRoute path="/">
         <Home />

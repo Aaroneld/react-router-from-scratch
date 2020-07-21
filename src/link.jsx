@@ -4,12 +4,6 @@ import { RouterContext } from './contexts';
 
 const CustomLink = ({children, to}) => {
 
-
-
-
-
- 
-
     return (
         <RouterContext.Consumer>
             {({forceUpdate}) => (

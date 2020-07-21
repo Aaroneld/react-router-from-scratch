@@ -4,16 +4,14 @@ import { RouterContext } from './contexts';
 
 
 
-const Router = ({children, ...rest}) => {
+const Router = ({children}) => {
 
     function useForceUpdate(){
         const [value, setValue] = useState(0); // integer state
-        return () => setValue(value => ++value); // update the state to force render
+        return () => setValue(value => value === 1? 0 : 1); // update the state to force render
     }
     
     const forceUpdate = useForceUpdate();
-
-    console.log(children.props)
 
     return(
         <RouterContext.Provider value={{forceUpdate}}>
