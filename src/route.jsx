@@ -3,24 +3,14 @@ import React, { useEffect, useState } from 'react'
 
 
 
-const CustomRoute = ({component: Component, path }) => {
-
-    const [isValid, setIsValid] = useState(false);
-    const [forceUpdate, setForceUpate] = useState(0);
-
-    useEffect(() => {
-        if(window.location.pathname === path){
-            setIsValid(true)
-        } else setIsValid(false)
-        setForceUpate(forceUpdate + 1)
-    }, [setForceUpate])
+const CustomRoute = ({children, path }) => {
 
    
-    if(isValid){
-        console.log('here');
+    if(window.location.pathname === path){
+        console.log(children);
         return(
             <div>
-                <Component />
+                {children}
             </div>
         )
     }
