@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import CustomLink from './link';
 import { useParams } from './useParams';
+import { useHistory } from './useHistory';
 
 
 const About = props => {
@@ -11,10 +12,18 @@ const About = props => {
     const { params } = useParams();
     console.log(params);
 
+    const { location, push } = useHistory();
+    console.log(location);
+
+
+    const handleClick = _ => {
+        push("/");
+    }
+
     return(
         <div>
             <header>
-                <CustomLink to="/">Home</CustomLink>
+                <p onClick={handleClick}>Home</p>
                 <CustomLink to="/about/1">About</CustomLink>
             </header>
             <p>About</p>
