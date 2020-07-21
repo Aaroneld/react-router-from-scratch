@@ -10,7 +10,7 @@ const Home = props => {
         <div>
             <header>
                 <CustomLink to="/">Home</CustomLink>
-                <CustomLink to="/about">About</CustomLink>
+                <CustomLink to="/about/1">About</CustomLink>
             </header>
             <p>Home</p>
         </div>

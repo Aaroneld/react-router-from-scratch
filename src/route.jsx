@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 
-const CustomRoute = ({children, path }) => {
+const CustomRoute = ({children, path}) => {
 
+    let pathname; 
    
-    if(window.location.pathname === path){
-        console.log(children);
+    window.location.pathname === "/" ? 
+    pathname ="/" : 
+    pathname = "/" + window.location.pathname.split('/')[1];
+    
+    if(pathname ===  "/" + path.split("/")[1]){
+        console.log("here");
         return(
             <div>
                 {children}

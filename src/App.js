@@ -15,7 +15,7 @@ function App(props) {
       <CustomRoute path="/">
         <Home />
       </CustomRoute>
-      <CustomRoute path="/about">
+      <CustomRoute path="/about/:id">
         <About />
       </CustomRoute>
     </div>
